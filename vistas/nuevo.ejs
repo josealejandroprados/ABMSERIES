@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar nueva serie</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container mt-5 mb-4 py-4">
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="h4">Nueva Serie</h4>
+
+                <form action="/agregar" method="post">
+                    
+                    <div class="row g-3 align-items-center mb-3">
+                        <div class="col-auto">
+                            <label for="titulo" class="col-form-label">Titulo</label>
+                        </div>
+                        <div class="col-auto">
+                            <input type="text" placeholder="Ingrese el titulo" name="titulo" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="descripcion" class="form-label">Descripcion</label>
+                        <textarea name="descripcion" class="form-control form-control-sm" placeholder="Ingrese una breve descripcion de la serie" cols="30" rows="10" required></textarea>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="row g-3 align-items-center mb-3">
+                                <div class="col-auto">
+                                    <label for="fecha" class="col-form-label">Fecha de Estreno:</label>
+                                </div>
+                                <div class="col-auto">
+                                    <input type="date" name="fecha" value="" class="form-control" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row g-3 align-items-center mb-3">
+                                <div class="col-auto">
+                                    <label for="estrellas" class="col-form-label">Estrellas:</label>
+                                </div>
+                                <div class="col-auto">
+                                    <input type="number" name="estrellas" class="form-control" required max="5" min="1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-check">
+                                <input type="checkbox" name="atp" class="form-check-input">
+                                <label for="atp" class="form-check-label">Apta para todo público(ATP)</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="row g-3 align-items-center">
+                                <div class="col-auto">
+                                    <label for="genero" class="col-form-label">Genero:</label>
+                                </div>
+                                <div class="col-auto">
+                                    <input class="form-control" list="datalistOptions" name="genero" id="genero" placeholder="Type to search..." required>
+                                        <datalist id="datalistOptions">
+                                            <option value="Accion">
+                                            <option value="Animada">
+                                            <option value="Comedia">
+                                            <option value="Drama">
+                                            <option value="Suspenso">
+                                            <option value="Terror">
+                                        </datalist>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="row g-3 align-items-center">
+                                <div class="col-auto">
+                                    <label for="precio" class="col-form-control">Precio Alquiler:</label>
+                                </div>
+                                <div class="col-auto">
+                                    <input type="text" name="precio" class="form-control" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br><br>
+
+                    <div class="row">
+                        <div class="col-lg-9 col-md-8 col-sm-5"></div>
+                        <div class="col-lg-3 col-md-4 col-sm-7">
+                            <button type="submit" class="btn btn-success" id="btnAceptar">Aceptar</button>
+                            <button type="button" class="btn btn-danger" id="btnCancelar">Cancelar</button>
+                        </div>
+                    </div>
+                    
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script>
+        var btnCancelar = document.getElementById('btnCancelar');
+
+        btnCancelar.addEventListener('click', () => {
+            window.location.href=`/home`;
+        });
+    </script>
+</body>
+</html>

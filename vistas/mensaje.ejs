@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    
+    <script>
+        if((<%=mensaje%>) == 1){
+            alert('Bienvenido <%=usuario%>');
+            window.location.href='/home';
+        }
+        else if((<%=mensaje%>) == 2){
+            alert('La serie se agregó con exito');
+            window.location.href='/home';
+        }
+        else if((<%=mensaje%>) == 3){
+            alert('La serie se modificó con exito');
+            window.location.href='/home';
+        }
+        else if((<%=mensaje%>) == 4){
+            alert('La serie se anuló con exito');
+            window.location.href='/home';
+        }
+        else if((<%=mensaje%>) == 5){
+            alert('La serie se eliminó con exito');
+            window.location.href='/home';
+        }
+        else if((<%=mensaje%>) == 6){
+            alert('Registro Exitoso con el usuario <%=usuario%>, Por favor ingrese sesion nuevamente');
+            window.location.href='/';
+        }
+        else if((<%=mensaje%>) == 7){
+            alert('Error de conexion a la Base de Datos');
+            window.location.href='/';
+        }
+        else if((<%=mensaje%>) == 8){
+            alert('Error! Verifique su usuario y contraseña');
+            window.location.href='/';
+        }
+        else if((<%=mensaje%>) == 9){
+            alert('¡No se puede modificar una serie anulada!');
+            window.location.href='/home';
+        }
+        
+    </script>
+</body>
+</html>
